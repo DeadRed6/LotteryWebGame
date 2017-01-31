@@ -1,1 +1,1 @@
-var x = 1;
+//prepare to add some jQuery
