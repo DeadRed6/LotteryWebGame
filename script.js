@@ -2,6 +2,9 @@
 var intropara = document.getElementById("intro");
 function setUserName() {
   var name = prompt("Welcome! Please enter your name:");
+  if(name == null) {
+    name = "friend";
+  }
   localStorage.setItem('name', name);
   intropara.innerHTML = "Have fun in the Casino, " + name + "!";
 }
