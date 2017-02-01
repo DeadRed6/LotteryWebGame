@@ -1,7 +1,19 @@
-p {
+#intro {
   color: #ff0000;
+  font-size: 48px;
 }
 
+#creditcount {
+  color: #ffffff;
+}
+
+h3 {
+  color: #ff0000;
+  text-decoration: underline;
+}
+p, ul {
+  color: #ffffff;
+}
 body {
   background-color:  #1a0905;
 }
