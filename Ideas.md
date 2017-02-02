@@ -3,3 +3,4 @@
   1. Gives players increased hope to win
   2. Players choose three numbers
   3. Pseudo-randomness
+2. Win streak allows you to choose more numbers
