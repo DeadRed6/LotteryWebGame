@@ -1,5 +1,3 @@
-//prepare to add some jQuery
-localStorage.clear();
 var intropara = document.getElementById("intro");
 function setUserName() {
   var name = prompt("Welcome! Please enter your name:");
@@ -49,4 +47,3 @@ function playGame() {
     creditpara.innerHTML = "You currently have " + localStorage.getItem('credits') + " credits.";
   }
 }
-//add range checking [TO DO], and seeing if number already was inputted [DONE]
