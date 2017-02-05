@@ -11,9 +11,17 @@ h3 {
   color: #ff0000;
   text-decoration: underline;
 }
-p, ul {
+#rules, ul, #winstreak {
   color: #ffffff;
 }
 body {
   background-color:  #1a0905;
+}
+
+#choices {
+  color: #ffffff;
+}
+
+h4 {
+  color: #ff0000;
 }
