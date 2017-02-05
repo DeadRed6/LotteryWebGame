@@ -8,13 +8,17 @@
   <h1 id = "intro">Welcome to the Casino!</h1>
   <h2 id = "creditcount">You currently have 100 credits</h2>
   <h3>The Lottery Game: Lucky Five</h3>
-  <p>Rules:
+  <p id = "rules">Rules:
     <ul>
-      <li>You choose 4 numbers from a range of 1-50</li>
-      <li>Additionally, you get to choose the fifth from a smaller pool, 1-15</li>
-      <li>Each entry costs 25 credits, with the greatest prize being 1000 credits!</li>
+      <li>You choose 4 numbers from a range of 1-40.</li>
+      <li>Additionally, you get to choose the fifth from a smaller pool, 1-10.</li>
+      <li>Each entry costs 25 credits, with the greatest prize being 1600!</li>
+      <li>Increase your prize through winning multiple (max 4) times in a row!</li>
     </ul>
+  <p id ="winstreak">Your current multiplier is 1x.</p>
+  <p id ="choices"></p>
   <button onclick="playGame()">Play Game</button>
+  <button onclick="resetData()">Reset All</button>
   <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
