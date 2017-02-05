@@ -1,7 +1,8 @@
+//adds a personalised welcome message to greet the user
 var intropara = document.getElementById("intro");
 function setUserName() {
   var name = prompt("Welcome! Please enter your name:");
-  if(name == null) {
+  if(name == null || name == "") {
     name = "friend";
   }
   localStorage.setItem('name', name);
@@ -13,12 +14,12 @@ if(!localStorage.getItem('name')) {
 } else {
   intropara.innerHTML = "Glad to have you back, " + localStorage.getItem('name') + "!";
 }
-
+//creates credits and a win streak for the user
 var creditpara = document.getElementById("creditcount");
 var credits = 100;
 var multiplier = 1;
 
-//check to see if the user has any credits, else sets to default of 100.
+//check to see if the user has any credits from previous sessions, else sets to default of 100.
 if(localStorage.getItem('credits')) {
   creditpara.innerHTML = "You currently have " + localStorage.getItem('credits') + " credits.";
   credits = localStorage.getItem('credits');
@@ -32,13 +33,16 @@ if(localStorage.getItem('multiplier')) {
 } else {
   localStorage.setItem('multiplier', multiplier);
 }
-
+//danger zone function
 var resetData = function() {
   if(confirm("Are you sure you want to delete all user data?")) {
+    multiplier = 1;
+    credits = 100;
     localStorage.setItem('credits', 100);
     creditpara.innerHTML ="You currently have " + localStorage.getItem('credits') + " credits.";
     localStorage.setItem('multiplier', 1);
     document.getElementById('winstreak').innerHTML = "Your current multiplier is " + localStorage.getItem('multiplier') + "x.";
+    intropara.innerHTML = "Welcome to the Casino!";
     setUserName();
   }
 }
@@ -65,7 +69,7 @@ function chooseNumbers() {
     special = prompt("Number out of range, retry.");
   } //end of all player choices
   document.getElementById("choices").innerHTML =
-  "You chose: " + choice + ". Bonus: " + special + ". Get ready for the draw in 3 seconds!";
+  "You chose: " + choice + ". Bonus: " + special + ". Get ready for the draw in 3 seconds!"; //can you feel the excitement?
   setTimeout(function() {
     //computer generates numbers
     calculateWin();
@@ -96,22 +100,22 @@ function calculateWin() {
     }
   }
   alert("You matched " + matched + " normal number(s).\n" + (compSpecial == special?"You matched the bonus!":"You didn't match the bonus."));
-  //calculate win;
-  var prize = ((50 * matched) + (compSpecial == special?200: 0)) * multiplier;
+  //calculate credits won - maximum is ((50 * 4 + 150) * 4) = 1400 credits
+  var prize = ((50 * matched) + (compSpecial == special?150: 0)) * multiplier;
   alert("This time, you won " + prize + " credits.");
   credits += prize;
   localStorage.setItem('credits', credits);
   creditpara.innerHTML = "You currently have " + localStorage.getItem('credits') + " credits.";
-  if(prize > 0 && multiplier != 4) {
+  if(prize > 0 && multiplier != 4) { //enforces max winstreak of 4
     multiplier++;
   } else {
     multiplier = 1;
   }
   localStorage.setItem('multiplier', multiplier);
   document.getElementById('winstreak').innerHTML = "Your current multiplier is " + localStorage.getItem('multiplier') + "x.";
-  docuement.getElementById('choices').innerHTML = "";
+  document.getElementById('choices').innerHTML = "";
 };
-//function that runs when the button is pressed.
+//function that runs when the 'play game' button is pressed.
 function playGame() {
   if(credits == 0) {
     return alert("Sorry, you have no credits left!");
