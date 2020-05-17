@@ -1,5 +1,5 @@
-# CodeItChallenge
-Workspace for my old school's coding competition, using HTML, CSS and Javascript.
+This is the result of work for my old school's coding competition, using HTML, CSS and Javascript.
+
 # Scenario
 A casino committee made a survey asking their clients which games they would be interested in playing. The most popular request was a lottery style game.
 
