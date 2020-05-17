@@ -1,5 +1,5 @@
 # CodeItChallenge
-Workspace for the coding competition, using HTML, CSS and Javascript.
+Workspace for my old school's coding competition, using HTML, CSS and Javascript.
 # Scenario
 A casino committee made a survey asking their clients which games they would be interested in playing. The most popular request was a lottery style game.
 
@@ -12,6 +12,7 @@ Remember to prepare a pitch to sell your lottery to the committee.
 
 # Deadline
 7th of February, 2017
+
 # Mark scheme
 - Task is solved using appropriate programming techniques. (/10)
 - Program is efficient and all parts of it work as required. (/10)
